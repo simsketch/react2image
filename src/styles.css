@@ -1,0 +1,19 @@
+.parent {
+  text-align: center;
+  overflow: auto;
+  display: block;
+  margin: auto;
+}
+
+p.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+p,
+button {
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+}
