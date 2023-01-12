@@ -1,3 +1,9 @@
+html {
+  background:#ccc;
+}
+.editorClassName {
+  border:3px solid #777;
+}
 .parent {
   text-align: center;
   overflow: auto;
@@ -16,4 +22,21 @@ button {
   text-align: center;
   margin-top: 10px;
   font-size: 20px;
+}
+.wrapperClassName {
+}
+.wrapper {
+  display:inline-block;
+  /* border:3px solid black; */
+  /* width:400px; */
+}
+.sidebar {
+  position: fixed;
+  right:0;
+  top:0;
+  width:300px;
+  background:#eee;
+  height:100%;
+  border-left:1px solid black;
+  text-align:center;
 }
