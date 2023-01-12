@@ -10,8 +10,10 @@ export default function App() {
   const [enableToolbar, setEnableToolbar] = useState(false); // for demo purpose
   // const w = window.location.search.replace('?w=','');
   // console.log(w);
-  const [width, setWidth] = useState(400); // for demo purpose
+  const [width, setWidth] = useState(600); // for demo purpose
+  const [editorRef, setEditorRef] = useState(); // for demo purpose
   const [editorState, setEditorState] = useState(EditorState.createEmpty()); // for demo purpose
+  // editorRef.focus();
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
     // editorState.getCurrentContent().getPlainText();
@@ -20,7 +22,7 @@ export default function App() {
     exportAsImage(exportRef.current, "test");
     const contentState = editorState.getCurrentContent();
     const text = contentState.getPlainText();
-    console.log(text);
+    alert(text);
   }
 
   return (
@@ -31,9 +33,9 @@ export default function App() {
             ref={exportRef}>
           <Editor
             // toolbarOnFocus
-            autofocus
+            placeholder="Enter some text and begin styling..."
             wrapperStyle={{width: `${width}px`}}
-            // editorRef={setEditorReference}
+            editorRef={setEditorRef}
             toolbarHidden={enableToolbar}
             editorState={editorState}
             toolbarClassName="toolbarClassName"
@@ -53,61 +55,18 @@ export default function App() {
       <div className="sidebar">
         <div>
           <ol>
-            <li>Adjust Width</li>
-            <li>Design Text</li>
-            <li>Hide Toolbar</li>
-            <li>Capture Image</li>
-          </ol>
-        </div>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-        <div>
-      <label for="width">Width: </label>
-      <input value={width} name="width" type="number" step="15" onChange={(e)=>setWidth(e.target.value)}></input>
-      </div>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-        <div>
+            <li><input value={width} name="width" type="number" step="15" onChange={(e)=>setWidth(e.target.value)}></input></li>
+            <li>Enter and style text.</li>
+            <li>
       <button onClick={() => setEnableToolbar(!enableToolbar)}>
         {enableToolbar ? "Show Toolbar" : "Hide Toolbar"}
-      </button>
-      </div>
-        <div>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      <hr></hr>
-      </div>
-        <div>
+      </button></li>
+            <li>
       <button onClick={() => imageExport()}>
         Capture Image
-      </button>
-      </div>
-        <div>
-      {/* <button onClick={()=>changeWidth(width)}>Change Width</button> */}
-      </div>
+      </button></li>
+          </ol>
+        </div>
       </div>
     </>
   );

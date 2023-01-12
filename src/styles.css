@@ -1,8 +1,8 @@
 html {
-  background:#ccc;
+  font-family:Arial,sans-serif;
 }
 .editorClassName {
-  border:3px solid #777;
+  /* border:3px solid #777; */
 }
 .parent {
   text-align: center;
@@ -21,7 +21,7 @@ button {
   margin: auto;
   text-align: center;
   margin-top: 10px;
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 .wrapperClassName {
 }
