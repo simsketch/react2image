@@ -29,12 +29,12 @@ export default function App() {
     <>
       <div className="parent">
         <div
-            className="wrapper"
-            ref={exportRef}>
+          className="wrapper"
+          ref={exportRef}>
           <Editor
             // toolbarOnFocus
             placeholder="Enter some text and begin styling..."
-            wrapperStyle={{width: `${width}px`}}
+            wrapperStyle={{ width: `${width}px` }}
             editorRef={setEditorRef}
             toolbarHidden={enableToolbar}
             editorState={editorState}
@@ -55,16 +55,16 @@ export default function App() {
       <div className="sidebar">
         <div>
           <ol>
-            <li><input value={width} name="width" type="number" step="15" onChange={(e)=>setWidth(e.target.value)}></input></li>
+            <li><input value={width} name="width" type="number" step="15" onChange={(e) => setWidth(e.target.value)}></input></li>
             <li>Enter and style text.</li>
             <li>
-      <button onClick={() => setEnableToolbar(!enableToolbar)}>
-        {enableToolbar ? "Show Toolbar" : "Hide Toolbar"}
-      </button></li>
+              <button onClick={() => setEnableToolbar(!enableToolbar)}>
+                {enableToolbar ? "Show Toolbar" : "Hide Toolbar"}
+              </button></li>
             <li>
-      <button onClick={() => imageExport()}>
-        Capture Image
-      </button></li>
+              <button onClick={() => imageExport()}>
+                Capture Image
+              </button></li>
           </ol>
         </div>
       </div>
